@@ -6,9 +6,9 @@ public class Produits {
 	private int stock;
 	
 	public Produits(String pNom, double pPrix, int pStock) {	
-		pNom = nom;
-		pPrix = prix;
-		pStock = stock;
+		nom = pNom;
+		prix = pPrix;
+		stock = pStock;
 	}
 
 

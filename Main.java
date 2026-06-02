@@ -6,7 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Produits> Articles= new ArrayList<Produits>();
+		ArrayList<Produits> Articles = new ArrayList<Produits>();
+		int stockTotal = 0;
 		
 		Produits p001 = new Produits("projecteur Nasco 09", 35000, 12);
 		Articles.add(p001);
@@ -26,9 +27,6 @@ public class Main {
 		Produits p006 = new Produits("Infinix Hot 60i", 75000, 9);
 		Articles.add(p006);
 
-		//for (int i=0; i<Articles.size(); i++) {
-			//System.out.println(Articles.get(i).toString());
-		//}	
 		
 		p001.setNom("LG");
 		p003.setPrix(57000);
@@ -36,6 +34,12 @@ public class Main {
 		for (int i=0; i<Articles.size(); i++) {
 			System.out.println(Articles.get(i).toString());
 		}	
+
+		// stock total du magasin avec tous produits confondus
+		for (int i=0; i<Articles.size(); i++) {
+			stockTotal = stockTotal + Articles.get(i).getStock();
+		}
 		
+		System.out.println(" Le nombre total de produit présent dans le magasin est : " + stockTotal);
 	}
 }
