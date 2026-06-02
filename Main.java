@@ -9,27 +9,21 @@ public class Main {
 		ArrayList<Produits> Articles = new ArrayList<Produits>();
 		int stockTotal = 0;
 		
-		Produits p001 = new Produits("projecteur Nasco 09", 35000, 12);
+		Produits p001 = new Produits("projecteur Nasco 09", 35000);
 		Articles.add(p001);
 		
-		Produits p002 = new Produits("Ecran LG 17''", 20000, 8);
+		Produits p002 = new Produits("Ecran LG 17", 20000);
 		Articles.add(p002);
 		
-		Produits p003 = new Produits("Tecno Spark 40pro+ 256Gb", 95000, 32);
-		Articles.add(p003);
-		
-		Produits p004 = new Produits("Itel A70", 55000, 6);
-		Articles.add(p004);
-		
-		Produits p005 = new Produits("Clavier HP", 4000, 21);
-		Articles.add(p005);
-		
-		Produits p006 = new Produits("Infinix Hot 60i", 75000, 9);
-		Articles.add(p006);
+		// Entree
+		p001.entree(50);
+		p002.entree(10);
+
+		// Sorties
+		 p001.sortie(10);
+		 p002.sortie(20);
 
 		
-		p001.setNom("LG");
-		p003.setPrix(57000);
 		
 		for (int i=0; i<Articles.size(); i++) {
 			System.out.println(Articles.get(i).toString());
