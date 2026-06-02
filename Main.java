@@ -1,4 +1,4 @@
-package gestionStock;
+package tp;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package gestionStock;
+package tp;
 
 public class Produits {
 	private String nom;
