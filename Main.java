@@ -4,16 +4,18 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+
+		// Variables
 		
 
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("Se connecter en tant que:");
-		System.out.println("1 : Gerant");
-		System.out.println("2 : Rexeptionniste");
-		System.out.println("3 : Vendeur");
+		System.out.println("G : Gerant");
+		System.out.println("R : Réceptionniste");
+		System.out.println("V : Vendeur");
 
-		int i = new input()
+		
 
 		switch (i){
 			case 1:
