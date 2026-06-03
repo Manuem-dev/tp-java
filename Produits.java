@@ -1,5 +1,3 @@
-package tp;
-
 public class Produits {
 	private String nom;
 	private double prix;
