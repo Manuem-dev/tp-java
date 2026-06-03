@@ -42,6 +42,8 @@ public class Main {
 		Fenetre window = new Fenetre();
 		
 
+		Scanner in
+
 		system.out.println("Se connecter en tant que:")
 
 		switch (i){
