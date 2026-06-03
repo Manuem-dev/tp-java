@@ -8,6 +8,7 @@ public class Main {
 		// Variables
 		String statut = new String();
 
+
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("Se connecter en tant que:");
