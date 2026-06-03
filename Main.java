@@ -6,6 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//_______DEVELOPPEMENT LOGIQUE_______
+
 		ArrayList<Produits> Articles = new ArrayList<Produits>();
 		int stockTotal = 0;
 		
@@ -35,5 +37,14 @@ public class Main {
 		}
 		
 		System.out.println(" Le nombre total de produit présent dans le magasin est : " + stockTotal);
+
+
+		//_____DEVELOPPEMENT GRAPHIQUE_____
+
+		Fenetre window = new Fenetre();
+		
+
+
+
 	}
 }
