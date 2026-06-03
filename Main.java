@@ -42,6 +42,13 @@ public class Main {
 		Fenetre window = new Fenetre();
 		
 
+		system.out.println("Se connecter en tant que:")
+
+		switch (i){
+			case 1:
+        	System.out.println(i + "Gerant");
+        	break;
+
 
 
 	}
