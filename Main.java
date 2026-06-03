@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -42,9 +43,14 @@ public class Main {
 		Fenetre window = new Fenetre();
 		
 
-		Scanner in
+		Scanner input = new Scanner(System.in);
 
-		system.out.println("Se connecter en tant que:")
+		System.out.println("Se connecter en tant que:");
+		System.out.println("1 : Gerant");
+		System.out.println("2 : Rexeptionniste");
+		System.out.println("3 : Vendeur");
+
+		int i = new input()
 
 		switch (i){
 			case 1:
