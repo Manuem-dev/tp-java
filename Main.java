@@ -17,12 +17,5 @@ public class Main {
 		statut = input.next();
 		
 
-		switch (i){
-			case 1:
-        	System.out.println(i + "Gerant");
-        	break;
-
-
-
 	}
 }

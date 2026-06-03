@@ -30,23 +30,23 @@ public class Produits {
 
 	public void entree(int pStock){
 		stock = stock + pStock;
-		System.out.println("Le stock du produit " + this.nom + " a été augmenté avec succès de " + pStock + " produit(s)" );
+		System.out.println("Le stock du produit " + this.nom + " a été augmenté avec succès de " + pStock + " produit(s) \n" );
 	}
 
 	public void sortie(int pStock){
-		if ((this.stock - pStock) > 0) {
+		if ((this.stock - pStock) >= 0) {
 			stock = stock - pStock;
-			System.out.println(" Le stock du produit "+ this.nom + " a été diminué avec succès de " + pStock + " produit(s)");
+			System.out.println("Le stock du produit "+ this.nom + " a été diminué avec succès de " + pStock + " produit(s) \n");
 		} else{
 			System.out.println("Le stock ne peut pas être négatif car le stock disponible pour le produit " + this.nom + " est de " + this.stock);
-			System.out.println("alors que vous voulez faire une sortie de " + pStock);
+			System.out.println("alors que vous voulez faire une sortie de " + pStock +"\n");
 		}
 	}
 
 	
 
 	public String toString() {
-		return "Produits [nom=" + nom + ", prix=" + prix + ", stock=" + stock + "]";
+		return "Produits [nom=" + nom + ", prix=" + prix + ", stock=" + stock + "] \n";
 	}
 	
 	
