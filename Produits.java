@@ -24,16 +24,16 @@ public class Produits {
 	// Entrée ou réception
 	public void entree(int pStock) {
 		stock = stock + pStock;
-		System.out.println(
-				"Le stock du produit " + this.nom + " a été augmenté avec succès de " + pStock + " produit(s) \n");
+		// System.out.println(
+		// 		"Le stock du produit " + this.nom + " a été augmenté avec succès de " + pStock + " produit(s) \n");
 	}
 
 	// Sortie ou vente
 	public void sortie(int pStock) {
 		if ((this.stock - pStock) >= 0) {
 			stock = stock - pStock;
-			System.out.println(
-					"Le stock du produit " + this.nom + " a été diminué avec succès de " + pStock + " produit(s) \n");
+			// System.out.println(
+			// 		"Le stock du produit " + this.nom + " a été diminué avec succès de " + pStock + " produit(s) \n");
 		} else {
 			System.out.println("Le stock ne peut pas être négatif car le stock disponible pour le produit " + this.nom
 					+ " est de " + this.stock);
