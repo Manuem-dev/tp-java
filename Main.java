@@ -35,7 +35,7 @@ public class Main {
 					
 					while (quit) {
 						
-						// Entrée du Menu gérant
+						// Entrée dans le MENU GÉRANT
 						String role = new String();
 						System.out.println("==========_____MENU GÉRANT_____==========");
 						System.out.println("Bienvenue Gérant");
@@ -190,9 +190,9 @@ public class Main {
 				
 				// Cas du réceptionniste
 				case "r":
+					System.out.println("==========_____MENU RÉCEPTIONNISTE_____==========");
+					System.out.println("Bienvenue Réceptionniste");
 					if (produits.size()>0) {
-						System.out.println("==========_____MENU RÉCEPTIONNISTE_____==========");
-						System.out.println("Bienvenue Réceptionniste");
 						System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
 						for(int i=0;i<produits.size();i++){
 							System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
