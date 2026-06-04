@@ -86,9 +86,17 @@ public class Main {
 						
 						break;
 					case "r":
-						System.out.println("Les produits en rupture de stock sont: ");
+						int all=0;
 						for(int i=0;i<produits.size();i++){
-							produits.get(i).ruptureStock();;
+							all = all + produits.get(i).getStock();
+						}
+						if (all > 0) {
+							System.out.println("Les produits en rupture de stock sont: ");
+							for(int i=0;i<produits.size();i++){
+								produits.get(i).ruptureStock();;
+							}
+						} else{
+							System.out.println("Le magasin est vide pour le moment, veuillez donc ajoutez des produits ");
 						}
 						break;
 				
