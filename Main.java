@@ -13,6 +13,7 @@ public class Main {
 		Scanner input = new Scanner(System.in);
 		boolean condition = true;
 		while (condition) {
+			System.out.println("==========MENU PRINCIPALE==========");
 			System.out.println("Se connecter en tant que:");
 			System.out.println("G/g : Gerant");
 			System.out.println("R/r : Réceptionniste");
@@ -27,6 +28,7 @@ public class Main {
 				case "g":
 					int choix,newQuantite;
 					String role = new String();
+					System.out.println("==========_____MENU GÉRANT_____==========");
 					System.out.println("Bienvenue Gérant");
 					System.out.println("Veuillez choisir ce que vous voulez faire: ");
 					System.out.println("A/a : Ajouter un produit");
@@ -38,17 +40,45 @@ public class Main {
 
 					switch (role.toLowerCase()) {
 						case "a":
+							boolean go=true;
+							String r = new String();
 							String nom = new String();
 							double price=0;
+							System.out.println("==========_____MENU AJOUT DE PRODUIT_____==========");
 							System.out.print("Veuillez entrer le nom du produit à ajouter: ");
 							nom = input.next();
 							System.out.print("Veuillez le prix de ce produit: ");
 							price = input.nextDouble();
 							produits.add(new Produits(nom, price));
 							System.out.println("Le produit " + nom + " a été enrégistré avec succès au prix de " + price);
+							while (go) {
+								System.out.println("\nVoulez-vous encore ajouter un produit  ? (O/o)/(N/n)");
+								r = input.next();
+								while (!r.toLowerCase().equals("o") && !r.toLowerCase().equals("n")) {
+									System.out.println(q);
+									System.out.println("\nVoulez-vous quitter ? (O/o)/(N/n)");
+									r = input.next();
+								}
+								
+
+								if (r.toLowerCase().equals("o")) {
+									System.out.print("Veuillez entrer le nom du produit à ajouter: ");
+									nom = input.next();
+									System.out.print("Veuillez le prix de ce produit: ");
+									price = input.nextDouble();
+									produits.add(new Produits(nom, price));
+									System.out.println("Le produit " + nom + " a été enrégistré avec succès au prix de " + price);
+									go = false;
+									break;
+								} else{
+									
+									continue;
+								}
+							}
 
 							break;
 						case "e":
+							System.out.println("==========_____MENU ENTREPÔSER_____==========");
 							System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
 							for(int i=0;i<produits.size();i++){
 								System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
@@ -62,6 +92,7 @@ public class Main {
 					
 							break;
 						case "v":
+							System.out.println("==========_____MENU VENDRE_____==========");
 							System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
 							for(int i=0;i<produits.size();i++){
 								System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
@@ -78,6 +109,7 @@ public class Main {
 							break;
 						case "p":
 							int total=0;
+							System.out.println("==========_____MENU AFFICHAGE DE STOCK_____==========");
 							for(int i=0;i<produits.size();i++){
 								total = total + produits.get(i).getStock();
 							}
@@ -93,6 +125,7 @@ public class Main {
 							break;
 						case "r":
 							int all=0;
+							System.out.println("==========_____MENU AFFICHAGE RUPTURE DE STOCK_____==========");
 							for(int i=0;i<produits.size();i++){
 								all = all + produits.get(i).getStock();
 							}
@@ -112,7 +145,7 @@ public class Main {
 					break;
 				case "r":
 					if (produits.size()>0) {
-						
+						System.out.println("==========_____MENU RÉCEPTIONNISTE_____==========");
 						System.out.println("Bienvenue Réceptionniste");
 						System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
 						for(int i=0;i<produits.size();i++){
@@ -130,28 +163,29 @@ public class Main {
 					
 					break;
 				case "v":
-				System.out.println("Bienvenue Vendeur");
-				if (produits.size()>0) {
-					
-					System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
-					for(int i=0;i<produits.size();i++){
-						System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
+					System.out.println("==========_____MENU VENDEUR_____==========");
+					System.out.println("Bienvenue Vendeur");
+					if (produits.size()>0) {
+						
+						System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
+						for(int i=0;i<produits.size();i++){
+							System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
+						}
+						System.out.print("Votre choix: ");
+						choix = input.nextInt();
+						System.out.print("Vous avez choisi le produit [" + produits.get(choix-1).getNom() + "]; \n veuillez entrer la quantité que vous souhaiter vendre: "   );
+						newQuantite = input.nextInt();
+						produits.get(choix-1).sortie(newQuantite);
+						if (produits.get(choix-1).getStock()>0) {
+							System.out.println("Vous avez retiré " + newQuantite + " produit(s) à l'entrepôt de " + produits.get(choix-1).getNom());	
+						}
+					} else{
+						
+						System.out.println("Le magasin est vide pour le moment, laissez le gérant ajouter un produit d'abord");
 					}
-					System.out.print("Votre choix: ");
-					choix = input.nextInt();
-					System.out.print("Vous avez choisi le produit [" + produits.get(choix-1).getNom() + "]; \n veuillez entrer la quantité que vous souhaiter vendre: "   );
-					newQuantite = input.nextInt();
-					produits.get(choix-1).sortie(newQuantite);
-					if (produits.get(choix-1).getStock()>0) {
-						System.out.println("Vous avez retiré " + newQuantite + " produit(s) à l'entrepôt de " + produits.get(choix-1).getNom());	
-					}
-				} else{
 					
-					System.out.println("Le magasin est vide pour le moment, laissez le gérant ajouter un produit d'abord");
-				}
-				
-				
-				break;
+					
+					break;
 				
 			
 			}
