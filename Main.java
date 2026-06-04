@@ -10,8 +10,6 @@ public class Main {
 
 		ArrayList <Produits> produits = new ArrayList<Produits>();
 
-		produits.add(new Produits("LG V20",30000));
-
 		Scanner input = new Scanner(System.in);
 
 		System.out.println("Se connecter en tant que:");
