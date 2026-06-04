@@ -22,7 +22,7 @@ public class Main {
 			statut = input.next();
 			String q = new String();
 			q = "";
-			
+		
 			switch (statut.toLowerCase()) {
 		
 				case "g":
@@ -46,33 +46,36 @@ public class Main {
 							double price=0;
 							System.out.println("==========_____MENU AJOUT DE PRODUIT_____==========");
 							System.out.print("Veuillez entrer le nom du produit à ajouter: ");
-							nom = input.next();
+							input.nextLine(); 
+							nom = input.nextLine();
 							System.out.print("Veuillez le prix de ce produit: ");
 							price = input.nextDouble();
 							produits.add(new Produits(nom, price));
 							System.out.println("Le produit " + nom + " a été enrégistré avec succès au prix de " + price);
 							while (go) {
 								System.out.println("\nVoulez-vous encore ajouter un produit  ? (O/o)/(N/n)");
+								input.nextLine();
 								r = input.next();
 								while (!r.toLowerCase().equals("o") && !r.toLowerCase().equals("n")) {
-									System.out.println(q);
-									System.out.println("\nVoulez-vous quitter ? (O/o)/(N/n)");
+									System.out.println("\nVoulez-vous encore ajouter un produit  ? (O/o)/(N/n)");
+									input.nextLine();
 									r = input.next();
 								}
 								
 
 								if (r.toLowerCase().equals("o")) {
 									System.out.print("Veuillez entrer le nom du produit à ajouter: ");
-									nom = input.next();
+									input.nextLine(); // consomme le \n résiduel
+									nom = input.nextLine();
 									System.out.print("Veuillez le prix de ce produit: ");
 									price = input.nextDouble();
 									produits.add(new Produits(nom, price));
 									System.out.println("Le produit " + nom + " a été enrégistré avec succès au prix de " + price);
-									go = false;
-									break;
+									continue;
 								} else{
 									
-									continue;
+									go = false;
+									break;
 								}
 							}
 
@@ -193,7 +196,6 @@ public class Main {
 			System.out.println("\nVoulez-vous quitter ? (O/o)/(N/n)");
 			q = input.next();
 			while (!q.toLowerCase().equals("o") && !q.toLowerCase().equals("n")) {
-				System.out.println(q);
 				System.out.println("\nVoulez-vous quitter ? (O/o)/(N/n)");
 				q = input.next();
 			}
