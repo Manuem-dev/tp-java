@@ -12,7 +12,7 @@ public class Main {
 		boolean condition = true;
 		
 		
-		// Entrée dans le menu principale
+		// Entrée dans le MENU PRINCIPALE
 		while (condition) {
 			System.out.println("==========MENU PRINCIPALE==========");
 			System.out.println("Se connecter en tant que:");
@@ -55,6 +55,7 @@ public class Main {
 								String nom = new String();
 								double price=0;
 
+								// Entrée dans le MENU AJOUT DE PRODUIT du MENU GÉRANT
 								System.out.println("==========_____MENU AJOUT DE PRODUIT_____==========");
 								System.out.print("Veuillez entrer le nom du produit à ajouter: ");
 								input.nextLine(); 
@@ -94,12 +95,11 @@ public class Main {
 
 								break;
 							case "e":
+								// Entrée dans le MENU ENTREPÔSER du MENU GÉRANT
 								System.out.println("==========_____MENU ENTREPÔSER_____==========");
 								
 								// Liester les produits si l'entrepôt n'est pas vide
 								if (produits.size()>0) {
-									System.out.println("==========_____MENU RÉCEPTIONNISTE_____==========");
-									System.out.println("Bienvenue Réceptionniste");
 									System.out.println("Voici la liste des produits disponibles; veuillez choisir un produit par son indice");
 									for(int i=0;i<produits.size();i++){
 										System.out.println("[indice: "+ (i+1) + " | produit: " + produits.get(i).getNom() + "]");
@@ -115,6 +115,7 @@ public class Main {
 								}
 								break;
 							case "v":
+								// Entrée dans le MENU VENDRE du MENU GÉRANT
 								System.out.println("==========_____MENU VENDRE_____==========");
 								
 								// Lister les produits si l'entrepôt n'est pas vide
@@ -139,6 +140,7 @@ public class Main {
 						
 								break;
 							case "p":
+								// Entrée dans le MENU AFFICHAGE DE STOCK du MENU GÉRANT
 								int total=0;
 								System.out.println("==========_____MENU AFFICHAGE DE STOCK_____==========");
 								for(int i=0;i<produits.size();i++){
@@ -155,6 +157,7 @@ public class Main {
 								
 								break;
 							case "r":
+								// Entrée dans le MENU AFFICHAGE RUPTURE DE STOCK du MENU GÉRANT
 								int all=0;
 								System.out.println("==========_____MENU AFFICHAGE RUPTURE DE STOCK_____==========");
 								for(int i=0;i<produits.size();i++){
@@ -190,6 +193,7 @@ public class Main {
 				
 				// Cas du réceptionniste
 				case "r":
+					// Entrée dans le MENU RÉCEPTIONNISTE
 					System.out.println("==========_____MENU RÉCEPTIONNISTE_____==========");
 					System.out.println("Bienvenue Réceptionniste");
 					if (produits.size()>0) {
@@ -211,6 +215,7 @@ public class Main {
 
 				// Cas du vendeur
 				case "v":
+					// Entrée dans le MENU VENDEUR
 					System.out.println("==========_____MENU VENDEUR_____==========");
 					System.out.println("Bienvenue Vendeur");
 					if (produits.size()>0) {
