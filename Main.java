@@ -35,7 +35,7 @@ public class Main {
 				switch (role.toLowerCase()) {
 					case "a":
 						String nom = new String();
-						double price;
+						double price=0;
 						System.out.print("Veuillez entrer le nom du produit à ajouter: ");
 						nom = input.next();
 						System.out.print("Veuillez le prix de ce produit: ");
